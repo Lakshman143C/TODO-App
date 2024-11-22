@@ -1,0 +1,30 @@
+import { Card, CardContent, Typography,CardActions,Button } from "@mui/material";
+
+function TodoItem({todo,todoDetails}){
+    return <Card sx={{
+        maxWidth:350,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+    }}>
+        <CardContent>
+            <Typography variant="h5" color={"text.secondary"}>{todo?.todo}</Typography>
+        </CardContent>
+        <CardActions>
+            <Button
+            onClick={()=>todoDetails(todo?.id)}
+             sx={{
+                backgroundColor : '#000000',
+                color : '#fff',
+                opacity : '0.75',
+                '&:hover' : {
+                    backgroundColor : '#000000',
+                color : '#fff',
+                opacity : '1'
+                }
+            }}>Show Details</Button>
+        </CardActions>
+    </Card>
+}
+
+export default TodoItem;
